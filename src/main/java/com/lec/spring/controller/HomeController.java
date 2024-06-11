@@ -14,7 +14,7 @@ public class HomeController {
     private String envInfo;
 
     @GetMapping("/aws/v2")
-    public String hello(@RequestParam(defaultValue = "1") Integer num){
+    public String hello(@RequestParam(defaultValue = "1", required = false) Integer num){
         if(num == 1){ // info 로그
             log.info("[" + envInfo + "] /aws/v2 이 호출. info 로그 #####################################");
         }else if(num == -1){ // error 로그
